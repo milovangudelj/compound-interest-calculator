@@ -1,5 +1,6 @@
 const form = document.querySelector(".compound-form");
 const calculator = document.querySelector(".calculator");
+let results = document.querySelector(".results");
 
 let compoundData = [];
 let d = new Date();
@@ -25,21 +26,30 @@ form.addEventListener("submit", (e) => {
 	}
 
 	const html = `
-		<div class="results">
-			<h2>Results</h2>
-			<p class="results-text">
-				Given the initial investment of <span class="highlight">${P}</span>, 
-				an interest rate of <span class="highlight">${i}%</span> compounded annually for <span class="highlight">${n}</span> years, 
-				the compound interest of your investment is: 
-				<span class="ci-result-total">${compoundData[compoundData.length - 1]}€</span>
-			</p>
-			<div class="chart-wrapper">
-				<canvas id="chart"></canvas>
-			</div>
+		<h2>Results</h2>
+		<p class="results-text">
+			Given the initial investment of <span class="highlight">${P}</span>, 
+			an interest rate of <span class="highlight">${i}%</span> compounded annually for <span class="highlight">${n}</span> years, 
+			the compound interest of your investment is: 
+			<span class="ci-result-total">${compoundData[compoundData.length - 1]}€</span>
+		</p>
+		<div class="chart-wrapper">
+			<canvas id="chart"></canvas>
 		</div>
 	`;
 
-	calculator.innerHTML = html;
+	if (results) {
+		results.innerHTML = html;
+		console.log("already exists");
+	} else {
+		console.log("just created");
+		calculator.innerHTML += `
+			<div class="results">
+				${html}
+			</div>
+		`;
+		results = document.querySelector(".results");
+	}
 
 	const ctx = document.getElementById("chart").getContext("2d");
 	const myChart = new Chart(ctx, {
@@ -58,7 +68,6 @@ form.addEventListener("submit", (e) => {
 			],
 		},
 		options: {
-			// grid: {},
 			scales: {
 				x: {
 					ticks: {
