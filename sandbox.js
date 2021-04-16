@@ -1,5 +1,5 @@
 const form = document.querySelector(".compound-form");
-const results = document.querySelector(".results");
+const calculator = document.querySelector(".calculator");
 
 let compoundData = [];
 let d = new Date();
@@ -39,7 +39,7 @@ form.addEventListener("submit", (e) => {
 		</div>
 	`;
 
-	results.innerHTML = html;
+	calculator.innerHTML = html;
 
 	const ctx = document.getElementById("chart").getContext("2d");
 	const myChart = new Chart(ctx, {
