@@ -25,15 +25,17 @@ form.addEventListener("submit", (e) => {
 	}
 
 	const html = `
-		<h2>Results</h2>
-		<p class="results-text">
-			Given the initial investment of <span class="highlight">${P}</span>, 
-			an interest rate of <span class="highlight">${i}%</span> compounded annually for <span class="highlight">${n}</span> years, 
-			the compound interest of your investment is: 
-			<span class="ci-result-total">${compoundData[compoundData.length - 1]}€</span>
-		</p>
-		<div class="chart-wrapper">
-			<canvas id="chart"></canvas>
+		<div class="results">
+			<h2>Results</h2>
+			<p class="results-text">
+				Given the initial investment of <span class="highlight">${P}</span>, 
+				an interest rate of <span class="highlight">${i}%</span> compounded annually for <span class="highlight">${n}</span> years, 
+				the compound interest of your investment is: 
+				<span class="ci-result-total">${compoundData[compoundData.length - 1]}€</span>
+			</p>
+			<div class="chart-wrapper">
+				<canvas id="chart"></canvas>
+			</div>
 		</div>
 	`;
 
