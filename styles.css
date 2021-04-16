@@ -1,0 +1,147 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--he-light-text: #fff;
+	--le-light-text: rgba(255, 255, 255, 0.38);
+
+	--he-dark-text: rgba(0, 0, 0, 0.87);
+
+	--p-300: #70bbff;
+	--p-500: #439dff;
+	--p-700: #3d7be2;
+
+	--s-300: #e1e683;
+	--s-500: #d9dc57;
+	--s-700: #d3b545;
+
+	--surface: #1a2025;
+
+	--primary: var(--p-300);
+	--secondary: var(--s-300);
+
+	--c-max-width: 940px;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	background-color: var(--surface);
+	color: var(--he-light-text);
+	padding: 0 48px;
+}
+
+.container {
+	width: 100%;
+	max-width: var(--c-max-width);
+	margin: auto;
+}
+
+.container.top-container {
+	margin: 64px auto;
+}
+
+.page-title {
+	font-weight: 400;
+	font-size: 47px;
+	color: var(--secondary);
+}
+
+.button {
+	padding: 8px 16px;
+	border: none;
+	border-radius: 4px;
+	background-color: var(--s-300);
+	font-family: "Roboto", sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 1.25px;
+	text-transform: uppercase;
+	color: var(--he-dark-text);
+}
+
+.compound-form-field {
+	font-family: "Roboto", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: 20px 0;
+}
+
+.compound-form :first-child {
+	margin-top: 0px;
+}
+
+.compound-form-field label {
+	font-weight: 400;
+	font-size: 10px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	margin-bottom: 16px;
+}
+
+.compound-form-field input:not(.button) {
+	width: 240px;
+	padding: 8px;
+	background-color: transparent;
+	color: var(--he-light-text);
+	border: 1px solid var(--primary);
+	border-radius: 4px;
+}
+
+.compound-form-field ::placeholder {
+	color: var(--le-light-text);
+}
+
+p {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+}
+
+.hero-paragraph {
+	width: 100%;
+	max-width: 335px;
+	margin: 32px 0 64px 0;
+}
+
+.calculator {
+	display: grid;
+	grid-template-columns: 240px calc(var(--c-max-width) - 80px - 240px);
+	grid-column-gap: 80px;
+}
+
+.results {
+	width: calc(var(--c-max-width) - 80px - 240px);
+}
+
+.results h2 {
+	font-weight: 400;
+	font-size: 23px;
+	letter-spacing: 0px;
+}
+
+.results-text {
+	margin: 16px 0;
+}
+
+.highlight {
+	color: var(--secondary);
+}
+
+.ci-result-total {
+	display: block;
+	width: fit-content;
+	padding: 8px 16px;
+	margin: 16px 0;
+	border-radius: 4px;
+	background-color: var(--primary);
+	color: var(--he-dark-text);
+}
+
+::-webkit-scrollbar {
+	display: none;
+}

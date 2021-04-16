@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Compound Interest Calculator</title>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.0/dist/chart.min.js"></script>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<main class="container top-container">
+			<h1 class="page-title">Compound Interest Calculator</h1>
+			<p class="hero-paragraph">
+				Find out how much you can grow your money through compound interest
+			</p>
+			<div class="calculator">
+				<form class="compound-form">
+					<div class="compound-form-field">
+						<label for="principal">Initial investment</label>
+						<input
+							type="text"
+							name="principal"
+							id="principal"
+							placeholder="0000"
+							required
+						/>
+					</div>
+					<div class="compound-form-field">
+						<label for="rate">Interest rate</label>
+						<input
+							type="text"
+							name="rate"
+							id="rate"
+							placeholder="0000"
+							required
+						/>
+					</div>
+					<div class="compound-form-field">
+						<label for="period">Compounding periods</label>
+						<input
+							type="text"
+							name="period"
+							id="period"
+							placeholder="0000"
+							required
+						/>
+					</div>
+					<div class="compound-form-field">
+						<input class="button" type="submit" value="Calculate" />
+					</div>
+				</form>
+				<div class="results"></div>
+			</div>
+		</main>
+		<script src="chart.js"></script>
+		<script src="sandbox.js"></script>
+	</body>
+</html>
