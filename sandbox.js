@@ -38,17 +38,15 @@ form.addEventListener("submit", (e) => {
 		</div>
 	`;
 
-	if (results) {
-		results.innerHTML = html;
-		console.log("already exists");
-	} else {
-		console.log("just created");
-		calculator.innerHTML += `
-			<div class="results">
-				${html}
-			</div>
-		`;
+	if (!results) {
+		const resDiv = document.createElement("div");
+		resDiv.className = "results";
+		resDiv.innerHTML = html;
+
+		calculator.appendChild(resDiv);
 		results = document.querySelector(".results");
+	} else {
+		results.innerHTML = html;
 	}
 
 	const ctx = document.getElementById("chart").getContext("2d");
